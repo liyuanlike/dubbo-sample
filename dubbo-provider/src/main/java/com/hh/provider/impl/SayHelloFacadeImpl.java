@@ -14,10 +14,8 @@ import org.springframework.context.ApplicationContextAware;
  * @date 2018/6/13下午9:40
  */
 
-@org.springframework.stereotype.Service
+@Service
 public class SayHelloFacadeImpl implements SayHelloFacade ,ApplicationContextAware {
-
-
 
     @Override
     public String say(String word) {
