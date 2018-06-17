@@ -1,11 +1,13 @@
 package com.hh.provider.impl;
 
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.hh.facade.SayHelloFacade;
+import com.rabbitmq.client.*;
 
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.beans.factory.InitializingBean;
 
 
 /**
@@ -15,18 +17,14 @@ import org.springframework.context.ApplicationContextAware;
  */
 
 @Service
-public class SayHelloFacadeImpl implements SayHelloFacade ,ApplicationContextAware {
+public class SayHelloFacadeImpl implements SayHelloFacade{
 
     @Override
     public String say(String word) {
 
-        System.out.println("Hello dubbo~,"+word);
-
+        System.out.println("Hello dubbo~," + word);
         return "success";
     }
 
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 
-    }
 }

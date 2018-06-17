@@ -12,6 +12,10 @@ public interface SayHelloFacade extends Remote {
 
     int PORT = 9998;
 
+    String QUEUE_NAME = "mq_queue";
+
+    String MQ_PORT = "localhost";
+
     String say(String word) throws RemoteException;
 
 }

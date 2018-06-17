@@ -31,7 +31,9 @@ public class DubboProviderApplication {
 
 
     public static void main(String[] args) throws RemoteException {
-        SpringApplication.run(DubboProviderApplication.class, args);
+        SpringApplication app = new SpringApplication(DubboProviderApplication.class);
+        app.addInitializers(new MyApplicationContext());
+        app.run(args);
         exportRMI();
     }
 }
